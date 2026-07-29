@@ -1,0 +1,113 @@
+name: Project submission
+description: Propose an open or source-available climate/environment AI project
+title: "[Project]: "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping NetZero Labs maintain an evidence-based climate AI directory.
+        Please link to primary sources and describe the licenses for code, models, and data separately.
+
+  - type: input
+    id: project-name
+    attributes:
+      label: Project name
+      placeholder: ClimateBERT
+    validations:
+      required: true
+
+  - type: input
+    id: primary-url
+    attributes:
+      label: Primary project URL
+      description: Link to the official repository, model organization, or project page.
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Climate or environmental relevance
+      description: Explain the domain problem and intended users in factual terms.
+      placeholder: This project supports...
+    validations:
+      required: true
+
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Public artifacts
+      description: Provide separate links for code, weights, datasets, model/data cards, paper, evaluation, and demo where available.
+      placeholder: |
+        Code:
+        Weights:
+        Dataset:
+        Paper:
+        Evaluation:
+        Demo:
+    validations:
+      required: true
+
+  - type: textarea
+    id: licenses
+    attributes:
+      label: Licenses
+      description: List the license for each artifact. Say "not declared" when a repository has no license.
+      placeholder: |
+        Code: Apache-2.0
+        Weights: custom model license
+        Dataset: CC BY 4.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: openness
+    attributes:
+      label: Proposed openness status
+      description: Maintainers will verify and may change this classification.
+      options:
+        - Open
+        - Open pipeline
+        - Source-available
+        - Mixed
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Hosted or proprietary dependencies
+      description: Disclose required APIs, managed model endpoints, gated weights, or commercial restrictions.
+      placeholder: Requires an OpenAI API key for generation; retrieval code is public.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence for technical claims
+      description: Link primary sources for model size, training data, benchmarks, architecture, and institutional relationships.
+      placeholder: Model card, paper section, repository documentation, or official announcement.
+
+  - type: input
+    id: verified-date
+    attributes:
+      label: Date verified
+      description: When did you last confirm the links and terms?
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked that the submitted links are public and point to the intended resources.
+          required: true
+        - label: I disclosed known licensing restrictions and proprietary dependencies.
+          required: true
+        - label: I did not include credentials, private information, or material I am not authorized to share.
+          required: true
